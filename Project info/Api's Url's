@@ -1,0 +1,232 @@
+API's 
+Trust Table:
+GET - http://localhost:8080/grails-cors/trust/indexApi/
+POST - http://localhost:8080/grails-cors/trust/createApi/
+{
+    "name": "1",
+    "code": "1",
+    "location": "3"
+}
+PUT - http://localhost:8080/grails-cors/trust/updateApi/id
+DELETE - http://localhost:8080/grails-cors/trust/deleteApi/id
+
+Organization Table:
+GET - http://localhost:8080/grails-cors/organization/indexApi/
+POST - http://localhost:8080/grails-cors/organization/createApi/
+{
+  "name": "GOVT ORG",
+  "code": "GO11",
+  "location": "Chennai"
+}
+PUT -  http://localhost:8080/grails-cors/organization/updateApi/id
+DELETE -  http://localhost:8080/grails-cors/organization/deleteApi/id
+
+
+Hospital Table:
+GET - http://localhost:8080/grails-cors/hospital/indexApi/
+POST - http://localhost:8080/grails-cors/hospital/createApi/
+{
+     "organization": {
+        "id": 2
+    },
+  "name": "Kanchi Apollo",
+  "code": "KH12",
+  "location": "Chennai"
+}
+PUT- http://localhost:8080/grails-cors/hospital/updateApi/id
+DELETE - http://localhost:8080/grails-cors/hospital/deleteApi/id
+
+TrustOrganization Table :
+GET - http://localhost:8080/grails-cors/trustOrganization/indexApi/
+POST - http://localhost:8080/grails-cors/trustOrganization/createApi/
+{
+   "trust": {
+        "id": 2
+    },
+    "organization": {
+        "id": 2
+    }
+}
+PUT - http://localhost:8080/grails-cors/trustOrganization/updateApi/id
+DELETE - http://localhost:8080/grails-cors/trustOrganization/deleteApi/id
+
+UserProfile Table : 
+GET - http://localhost:8080/grails-cors/userProfile/indexApi/
+POST - http://localhost:8080/grails-cors/userProfile/createApi/
+{
+    "email": "txhree@gmail.com",
+    "password": "secretpass",
+    "uuid": "333x3",
+    "accessToken": "accesss-token",
+    "title": "Mr",
+    "firstName": "Mesera",
+    "lastName": "kumari",
+    "dob": "1990-01-01",
+    "gender": "Female",
+    "phoneNumber": "9566702656"
+}
+PUT- http://localhost:8080/grails-cors/userProfile/updateApi/id
+DELETE - http://localhost:8080/grails-cors/userProfile/deleteApi/id
+
+
+Address Table 
+GET - http://localhost:8080/grails-cors/address/indexApi/
+POST - http://localhost:8080/grails-cors/address/createApi/
+{
+    "streetAddressLine1": "No.1",
+    "streetAddressLine2": "Main Street",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "postalCode": "123456",
+    "country": "Indian",
+    "userProfile":{
+        "id": 3
+    }
+PUT - http://localhost:8080/grails-cors/address/updateApi/id
+DELETE - http://localhost:8080/grails-cors/address/deleteApi/id
+
+
+PatientProfile Table
+GET - http://localhost:8080/grails-cors/patientProfile/indeApi/
+POST - http://localhost:8080/grails-cors/patientProfile/createApi/
+{
+    "medicalRecordNo": "P6",
+    "patientId": "Pe",
+    "userProfile": {
+        "id": 5
+    },
+    "hospital":{
+        "id": 1
+    }
+}
+PUT - http://localhost:8080/grails-cors/patientProfile/updateApi/id
+DELETE - http://localhost:8080/grails-cors/patientProfile/deleteApi/id
+
+AdmissionLog Table 
+GET - http://localhost:8080/grails-cors/admissionLog/indexApi/
+POST - http://localhost:8080/grails-cors/admissionLog/createApi/
+{
+    "patientAdmissionDateAndTime": "2023-08-15T10:00:00Z",
+    "admissionNotes": "Patient admitted with mild fever.",
+    "admissionNo": "AD12345",
+    "patientDischargeDateAndTime": "2023-08-20T14:00:00Z",
+    "patientProfile": {
+        "id": 1
+    },
+    "hospital": {
+        "id": 1
+    }
+}
+PUT - http://localhost:8080/grails-cors/admissionLog/updateApi/id
+DELETE - http://localhost:8080/grails-cors/admissionLog/deleteApi/id
+
+
+ClinicianProfile Table 
+GET - http://localhost:8080/grails-cors/clinicianProfile/indexApi/
+POST - http://localhost:8080/grails-cors/clinicianProfile/createApi/
+{
+	"clinicianId": "222ww22",
+	"licenseNumber": "22222",
+	"userProfile": {
+                   "id": 2
+                     },
+	"organization": {
+		"id": 1
+	},
+	"hospital": {
+		"id": 1
+	}
+}
+PUT - http://localhost:8080/grails-cors/clinicianProfile/updateApi/id
+DELETE - http://localhost:8080/grails-cors/clinicianProfile/deleteApi/id
+
+Role Table 
+GET - http://localhost:8080/grails-cors/Role/indexApi/
+POST - http://localhost:8080/grails-cors/Role/createApi/
+{
+    "name": "Patient",
+    "code": "PP22"
+}
+PUT- http://localhost:8080/grails-cors/Role/updateApi/id
+DELETE - http://localhost:8080/grails-cors/Role/deleteApi/id
+
+UserRole Table 
+GET - http://localhost:8080/grails-cors/userRole/indexApi/
+POST - http://localhost:8080/grails-cors/userRole/createApi/
+{
+   "userProfile": {
+        "id": 3
+    },
+    "role": {
+        "id": 2
+    }
+}
+PUT - http://localhost:8080/grails-cors/userRole/updateApi/id
+DELETE - http://localhost:8080/grails-cors/userRole/deleteApi/id
+
+Product Table 
+GET -  http://localhost:8080/grails-cors/product/indexApi/ 
+POST -  http://localhost:8080/grails-cors/product/createApi/
+{
+    "code": "44",
+    "diseaseName": "Blood cancer"
+}
+PUT- http://localhost:8080/grails-cors/product/updateApi/1 
+DELETE - http://localhost:8080/grails-cors/product/deleteApi/1 
+
+DigitalTherapy Table 
+GET -  http://localhost:8080/grails-cors/digitalTherapy/indexApi/ 
+POST -  http://localhost:8080/grails-cors/digitalTherapy/createApi/
+{
+    "code": "11",
+    "therapistName": "Dr.John",
+    "sessionStartDate":"2023-08-20T10:00:00Z",
+    "sessionEndDate": "2023-08-21T10:00:00Z",
+    "sessionCompletedDate": "2023-08-21T10:00:00Z",
+    "sessionNotes":"normal",
+    "patientProfile":{ "id": 1 },
+    "product":{"id":1  }
+}
+PUT -  http://localhost:8080/grails-cors/digitalTherapy/updateApi/1  
+DELETE - http://localhost:8080/grails-cors/digitalTherapy/deleteApi/1 
+
+HospitalTherapy Table 
+GET -  http://localhost:8080/grails-cors/hospitalTherapy/indexApi/ 
+POST -  http://localhost:8080/grails-cors/hospitalTherapy/createApi/
+{
+    "code": "11",
+    "therapistName": "Dr.John",
+    "sessionStartDate":"2023-08-20T10:00:00Z",
+    "sessionEndDate": "2023-08-21T10:00:00Z",
+    "sessionCompletedDate": "2023-08-21T10:00:00Z",
+    "sessionNotes":"normal",
+    "patientProfile":{ "id": 1 },
+    "product":{ "id":1 }
+}
+PUT -  http://localhost:8080/grails-cors/hospitalTherapy/updateApi/1 
+DELETE -  http://localhost:8080/grails-cors/hospitalTherapy/deleteApi/1 
+
+PatientPrescription Table 
+GET -  http://localhost:8080/grails-cors/patientPrescription/indexApi/ 
+POST -  http://localhost:8080/grails-cors/patientPrescription/createApi/
+{
+    "medication": "MedicineName",
+    "prescriptionNo": "1111",
+    "prescriptionDate": "2023-08-25T05:00:00Z",
+    "therapistName": "Dr.Jos",
+    "therapistInstructions": "need to workout",
+    "therapyMode": "HospitalTherapy",
+    "status": 1,
+    "patientProfile": {
+        "id": 1
+    }
+}
+PUT -  http://localhost:8080/grails-cors/patientPrescription/updateApi/1 
+DELETE - http://localhost:8080/grails-cors/patientPrescription/deleteApi/1 
+
+PrescriptionHistory Table 
+GET -  http://localhost:8080/grails-cors/prescriptionHistory/indexApi/       
+PUT -  http://localhost:8080/grails-cors/prescriptionHistory/updateApi/1 
+DELETE -  http://localhost:8080/grails-cors/prescriptionHistory/deleteApi/1 
+
+
