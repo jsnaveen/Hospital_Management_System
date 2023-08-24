@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Management System UI</title>
+</head>
+<body>
+    <h1>Hospital Management System</h1>
+    <h2>Create a New Trust</h2>
+    <form id="trustForm">
+        <label for="trustName">Trust Name:</label>
+        <input type="text" id="trustName" required>
+        <button type="submit">Create Trust</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        document.getElementById('trustForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const trustName = document.getElementById('trustName').value;
+
+            // Create an object to hold the data
+            const data = {
+                trustName: trustName
+            };
+
+            // Convert the object to JSON
+            const jsonData = JSON.stringify(data);
+
+            // Make a POST request to create a new trust using the API URL
+            fetch('/HospitalManagementSystem/trust/createApi', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: jsonData
+            })
+            .then(response => response.json())
+            .then(result => {
+                // Display success message
+                const messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = `Trust created with ID: ${result.id}`;
+            })
+            .catch(error => {
+                // Display error message
+                const messageDiv = document.getElementById('message');
+                messageDiv.innerHTML = `Error: ${error.message}`;
+            });
+        });
+    </script>
+</body>
+</html>
